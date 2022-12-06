@@ -1,5 +1,6 @@
 <template>
   <div class="home">
+    <FilterNav/>
     <div v-if="projects.length">
       <div v-for="project in projects" :key="project">
           <singleproject :project="project" @delete="handleDelete" @complete="handleComplete"/>
@@ -9,11 +10,12 @@
 </template>
 
 <script>
+import FilterNav from '@/components/FilterNav.vue'
 import singleproject from '../components/singleproject.vue'
 
 export default {
   name: 'HomeView',
-  components:{singleproject},
+  components:{ singleproject, FilterNav },
   data(){
     return{
       projects: []

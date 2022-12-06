@@ -5,6 +5,17 @@ const routes = [
     path: '/',
     name: 'home',
     component: () => import('../views/HomeView.vue')
+  },
+  {
+    path: '/add',
+    name: 'AddProject',
+    component: () => import('../views/AddProject.vue')
+  },
+  {
+    path: '/projects/:id',
+    name: 'EditProject',
+    component: () => import('../views/EditProject.vue'),
+    props: true
   }
 ]
 
